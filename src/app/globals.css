@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN SYSTEM
+   Only three color families are allowed: primary, accent, neutral.
+   - primary : brand lime (#c3ff00) + scale
+   - accent  : derived deeper lime for secondary emphasis
+   - neutral : grayscale for surfaces, text, borders
+   No other hues should ever be introduced.
+   ============================================================ */
+
+@theme {
+  /* ---------- Primary (brand lime, anchored at 500 = #c3ff00) ---------- */
+  --color-primary-50: #fbffe6;
+  --color-primary-100: #f4ffba;
+  --color-primary-200: #ecff85;
+  --color-primary-300: #e0ff4d;
+  --color-primary-400: #d2ff1a;
+  --color-primary-500: #c3ff00;
+  --color-primary-600: #9dd400;
+  --color-primary-700: #759e00;
+  --color-primary-800: #5b7a06;
+  --color-primary-900: #4c660b;
+  --color-primary-950: #283800;
+
+  /* ---------- Accent (derived from primary: deeper, olive-lime) ---------- */
+  --color-accent-50: #f7fbe6;
+  --color-accent-100: #ecf5c2;
+  --color-accent-200: #dbeb88;
+  --color-accent-300: #c4dc4d;
+  --color-accent-400: #aec522;
+  --color-accent-500: #9dd400;
+  --color-accent-600: #7ba500;
+  --color-accent-700: #5d7d04;
+  --color-accent-800: #4b630a;
+  --color-accent-900: #3f530e;
+  --color-accent-950: #202e02;
+
+  /* ---------- Neutral (true grayscale) ---------- */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  /* ---------- Typography scale (the ONLY text sizes to use) ----------
+     heading > subheading > body > normal. Components must not set raw
+     font sizes; use these role utilities: text-heading, text-subheading,
+     text-body, text-normal. */
+  --text-heading: 2.25rem; /* 36px */
+  --text-heading--line-height: 1.15;
+  --text-heading--font-weight: 800;
+
+  --text-subheading: 1.5rem; /* 24px */
+  --text-subheading--line-height: 1.3;
+  --text-subheading--font-weight: 600;
+
+  --text-body: 1.125rem; /* 18px */
+  --text-body--line-height: 1.6;
+
+  --text-normal: 1rem; /* 16px */
+  --text-normal--line-height: 1.5;
+
+  /* ---------- Layout ---------- */
+  --container-8xl: 96rem; /* enables max-w-8xl for section width */
+}
+
+/* ---------- Semantic tokens (switch with color scheme) ---------- */
+:root {
+  --background: #fafafa; /* neutral-50  */
+  --foreground: #0a0a0a; /* neutral-950 */
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --muted: #f5f5f5; /* neutral-100 */
+  --muted-foreground: #737373; /* neutral-500 */
+  --border: #e5e5e5; /* neutral-200 */
+
+  --primary: #c3ff00;
+  --primary-foreground: #0a0a0a; /* dark text on lime */
+  --accent: #9dd400;
+  --accent-foreground: #0a0a0a;
+  --ring: #c3ff00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* neutral-950 */
+    --foreground: #fafafa; /* neutral-50  */
+    --card: #171717; /* neutral-900 */
+    --card-foreground: #fafafa;
+    --muted: #262626; /* neutral-800 */
+    --muted-foreground: #a3a3a3; /* neutral-400 */
+    --border: #262626; /* neutral-800 */
+  }
+}
+
+/* Map semantic tokens + runtime font var into Tailwind utilities */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-satoshi);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-satoshi), Arial, Helvetica, sans-serif;
+}
