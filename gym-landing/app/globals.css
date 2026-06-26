@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0A0E0D;
+  --foreground: #F5F5F5;
+  --card: #111413;
+  --card-foreground: #F5F5F5;
+  --popover: #0A0E0D;
+  --popover-foreground: #F5F5F5;
+  --primary: #C3FF00;
+  --primary-foreground: #0A0E0D;
+  --secondary: #181E1C;
+  --secondary-foreground: #F5F5F5;
+  --muted: #131715;
+  --muted-foreground: #949E9B;
+  --accent: #1C2220;
+  --accent-foreground: #C3FF00;
+  --destructive: #FF3B30;
+  --destructive-foreground: #F5F5F5;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #C3FF00;
+  --radius: 1.5rem;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-xl: var(--radius);
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #181E1C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #232C29;
+}
+
+/* Smooth fade in utilities */
+.glass-panel {
+  background: rgba(17, 20, 19, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
