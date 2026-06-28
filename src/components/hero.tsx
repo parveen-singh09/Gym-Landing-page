@@ -11,9 +11,9 @@ const avatars = [
 
 const Hero = () => {
   return (
-    <section className="relative min-h-150 w-full overflow-hidden lg:h-[calc(100vh-80px)]">
+    <section className="relative min-h-150 w-full overflow-hidden rounded-b-3xl lg:min-h-[calc(100vh-80px)]">
       <Image
-        src="/images/cardio-zone.jpg"
+        src="/images/hero-runner.png"
         alt="Athlete running on a treadmill"
         fill
         priority

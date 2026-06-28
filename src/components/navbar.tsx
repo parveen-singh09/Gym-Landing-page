@@ -12,7 +12,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <header className="flex items-center justify-between px-6 py-5 md:px-10">
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-white/5 bg-secondary/50 px-6 py-5 backdrop-blur-md md:px-10">
       <Link href="/" className="text-2xl font-bold tracking-tight text-white">
         <span className="text-primary">.</span>TITAN
       </Link>

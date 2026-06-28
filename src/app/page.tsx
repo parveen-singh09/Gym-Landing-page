@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-secondary">
       <Navbar />
-      <Hero />
+      <div className="-mt-1">
+        <Hero />
+      </div>
     </main>
   );
 }
