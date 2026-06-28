@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #c3ff00;
+  --color-secondary: #0a0e0d;
+  --font-satoshi: var(--satoshi-font);
+}
