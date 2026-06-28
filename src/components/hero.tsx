@@ -32,9 +32,9 @@ const Hero = () => {
           </h1>
 
           <div className=" mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className="pr-2">
               Try for free
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-white">
+              <span className=" flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-white">
                 <ArrowUpRight size={20} />
               </span>
             </Button>
