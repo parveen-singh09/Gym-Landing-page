@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/button";
+import Navbar from "@/components/navbar";
 import TipCarousel from "@/components/tip-carousel";
 
 const avatars = [
@@ -11,19 +12,22 @@ const avatars = [
 
 const Hero = () => {
   return (
-    <section className="relative min-h-150 w-full overflow-hidden rounded-b-3xl lg:min-h-[calc(100vh-80px)]">
+    <section className="relative overflow-hidden rounded-3xl bg-secondary">
       <Image
         src="/images/hero-runner.png"
         alt="Athlete running on a treadmill"
         fill
         priority
-        className="object-cover object-center"
+        sizes="(min-width: 1024px) 90rem, 100vw"
+        className="object-cover object-right"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-secondary via-secondary/70 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-secondary via-secondary/80 to-secondary/20" />
 
-      <div className="relative z-10 flex h-full flex-col justify-between px-6 py-12 md:px-10">
-        <div className="my-5 flex flex-1 flex-col justify-center">
-          <h1 className="max-w-xl text-5xl font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+      <div className="relative z-10 flex flex-col px-5 py-5 sm:px-8 sm:py-6 md:px-10">
+        <Navbar />
+
+        <div className="mt-12 mb-10 max-w-xl md:mt-20 md:mb-16">
+          <h1 className="text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
             Be healthier.
             <br />
             Be stronger.
@@ -31,10 +35,10 @@ const Hero = () => {
             Be confident.
           </h1>
 
-          <div className=" mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button variant="primary" size="lg" className="pr-2">
               Try for free
-              <span className=" flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-white">
                 <ArrowUpRight size={20} />
               </span>
             </Button>
@@ -44,7 +48,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="my-11 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="rounded-3xl bg-white p-6">
             <div className="flex items-center gap-4">
               <div className="flex -space-x-3">

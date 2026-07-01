@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/button";
 
 const navLinks = [
@@ -12,12 +11,12 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-white/5 bg-secondary/50 px-6 py-5 backdrop-blur-md md:px-10">
+    <header className="flex items-center justify-between gap-4">
       <Link href="/" className="text-2xl font-bold tracking-tight text-white">
         <span className="text-primary">.</span>TITAN
       </Link>
 
-      <nav className="hidden items-center gap-8 md:flex">
+      <nav className="hidden items-center gap-8 lg:flex">
         {navLinks.map((link) => (
           <Link
             key={link.href}
@@ -35,7 +34,6 @@ const Navbar = () => {
         </Button>
         <Button variant="white" size="sm">
           Try for free
-          
         </Button>
       </div>
     </header>
